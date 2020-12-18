@@ -8,6 +8,9 @@ namespace Minesweeper_LHJ
 {
     static class Program
     {
+        //test von jannik in programm
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
