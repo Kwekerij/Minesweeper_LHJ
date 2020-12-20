@@ -1,0 +1,10 @@
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\bin\Debug\Minesweeper_LHJ.exe.config
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\bin\Debug\Minesweeper_LHJ.exe
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\bin\Debug\Minesweeper_LHJ.pdb
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.csprojAssemblyReference.cache
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.Form1.resources
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.Properties.Resources.resources
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.csproj.GenerateResource.cache
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.csproj.CoreCompileInputs.cache
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.exe
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.pdb
