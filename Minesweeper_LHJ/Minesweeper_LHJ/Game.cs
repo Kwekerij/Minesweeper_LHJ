@@ -11,29 +11,42 @@ namespace Minesweeper_LHJ
     {
         private Timer _timer;
         private int _FlaggedMines;
-        private int _Difficulty;
         private int _status;
 
         private Panel _panel;
         private Square[,] _squares;
+        private int _difficulty;
 
         private int _width;
         private int _height;
         private int _mines;
 
-        public Game(Panel panel, int width, int height, int mines)
+        public Game(Panel panel, int difficulty)
         {
             _panel = panel;
-            _width = width;
-            _height = height;
-            _mines = mines;
+            switch(difficulty)
+            {
+                case 0:
+                    _width = 10;
+                    _height = 8;
+                    _mines = 10;
+                    break;
+                case 1:
+                    _width = 18;
+                    _height = 14;
+                    _mines = 40;
+                    break;
+                case 2:
+                    _width = 24;
+                    _height = 20;
+                    _mines = 99;
+                    break;
+            } 
         }
 
         public void Start()
         {
             Panel.Enabled = true;
-            int Width = 10;
-            int Height = 8;
 
             _squares = new Square[Width, Height];
             for (int x = 0; x < Width; x++)
@@ -52,14 +65,14 @@ namespace Minesweeper_LHJ
 
 
 
-        public int Difficulty
-        {
-            get { return (this._Difficulty); }
-            set { this._Difficulty = value; }
-        }
+
         public Panel Panel
         {
             get { return (this._panel); }
+        }
+        public int Difficulty
+        {
+            get { return (this._difficulty); }
         }
         public int Width
         {

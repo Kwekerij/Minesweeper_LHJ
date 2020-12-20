@@ -61,15 +61,14 @@ namespace Minesweeper_LHJ
             this.cB_Difficulty.Name = "cB_Difficulty";
             this.cB_Difficulty.Size = new System.Drawing.Size(113, 30);
             this.cB_Difficulty.TabIndex = 1;
-            this.cB_Difficulty.SelectedIndexChanged += new System.EventHandler(this.cB_Difficulty_SelectedIndexChanged);
             // 
             // p_GameBoard
             // 
             this.p_GameBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(215)))), ((int)(((byte)(81)))));
             this.p_GameBoard.Enabled = false;
-            this.p_GameBoard.Location = new System.Drawing.Point(0, 60);
+            this.p_GameBoard.Location = new System.Drawing.Point(0, 58);
             this.p_GameBoard.Name = "p_GameBoard";
-            this.p_GameBoard.Size = new System.Drawing.Size(600, 600);
+            this.p_GameBoard.Size = new System.Drawing.Size(500, 441);
             this.p_GameBoard.TabIndex = 2;
             // 
             // label_Bombs
@@ -77,7 +76,7 @@ namespace Minesweeper_LHJ
             this.label_Bombs.AutoSize = true;
             this.label_Bombs.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Bombs.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_Bombs.Location = new System.Drawing.Point(259, 15);
+            this.label_Bombs.Location = new System.Drawing.Point(172, 16);
             this.label_Bombs.Name = "label_Bombs";
             this.label_Bombs.Size = new System.Drawing.Size(52, 29);
             this.label_Bombs.TabIndex = 3;
@@ -101,7 +100,7 @@ namespace Minesweeper_LHJ
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(117)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(736, 597);
+            this.ClientSize = new System.Drawing.Size(523, 525);
             this.Controls.Add(this.label_Timer);
             this.Controls.Add(this.label_Bombs);
             this.Controls.Add(this.p_GameBoard);

@@ -22,13 +22,9 @@ namespace Minesweeper_LHJ
         private void b_Start_Click(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
-            _game = new Game(this.p_GameBoard, 10, 10, 10);
+
+            _game = new Game(this.p_GameBoard, cB_Difficulty.SelectedIndex);
             _game.Start();
-        }
-
-        private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
