@@ -4,6 +4,7 @@ Was wollen wir drinne haben?
 	-Anzahl Minen (fehlende Minen); einstellbar
 	-Spielfeldgröße/Schwierigkeit 3oder5; anpassen; kleines Fenster; eigenes Feld
 	-Funktion; Minen erst nach erstem Klick verteilen (wenn möglich Feld öffnet sich)
+	-Hilfe Button zur Spielanleitung
 
 	-evtl. Highscore ( AllTimeHighScore / mit eintragbaren Namen evtl.)
 
