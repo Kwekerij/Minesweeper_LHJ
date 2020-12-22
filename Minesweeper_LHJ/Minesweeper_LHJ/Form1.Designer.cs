@@ -48,7 +48,7 @@ namespace Minesweeper_LHJ
             "Hard"});
             this.cB_Difficulty.Location = new System.Drawing.Point(20, 19);
             this.cB_Difficulty.Name = "cB_Difficulty";
-            this.cB_Difficulty.Size = new System.Drawing.Size(113, 37);
+            this.cB_Difficulty.Size = new System.Drawing.Size(132, 37);
             this.cB_Difficulty.TabIndex = 1;
             this.cB_Difficulty.SelectedIndexChanged += new System.EventHandler(this.cB_Difficulty_SelectedIndexChanged);
             // 
