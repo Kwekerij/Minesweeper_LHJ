@@ -10,17 +10,13 @@ namespace Minesweeper_LHJ
 {
     class Game
     {
-        private Timer _timer;
-        private int _FlaggedMines;
-        private int _status;
-
         private Panel _panel;
         private Square[,] _squares;
-        private int _difficulty;
 
         private int _width;
         private int _height;
         private int _mines;
+        private int _difficulty;
 
         Random rand = new Random();
 
@@ -109,7 +105,7 @@ namespace Minesweeper_LHJ
         }
         private void Explode(object sender, EventArgs e)
         {
-            Panel.Enabled = false;
+            Panel.Enabled = false; //numbers get grey
             //_timer.Enabled = false;
 
             foreach (Square s in _squares)
@@ -120,7 +116,7 @@ namespace Minesweeper_LHJ
                     s.Button.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
                     s.Button.Font = new Font("Microsoft Sans Serif", 18);
                     s.Button.TextAlign = ContentAlignment.MiddleCenter;
-                    s.Button.Text = "B"; //•
+                    s.Button.Text = "B"; //• 
                 }
             }
         }

@@ -143,13 +143,13 @@ namespace Minesweeper_LHJ
 							Button.ForeColor = Color.FromArgb(255, 143, 0); //orange
 							break;
 						case 6:
-							Button.ForeColor = Color.LightBlue;
+							Button.ForeColor = Color.LightBlue; //try to get it
 							break;
 						case 7:
-							Button.ForeColor = Color.Orange;
+							Button.ForeColor = Color.Blue; //unlikely
 							break;
 						case 8:
-							Button.ForeColor = Color.Ivory;
+							Button.ForeColor = Color.White;
 							break;
 					}
 					if ((X + Y) % 2 == 0)

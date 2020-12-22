@@ -21,7 +21,7 @@ namespace Minesweeper_LHJ
 
         private void b_Start_Click(object sender, EventArgs e)
         {
-            
+            //to be deleted, when cleaning
         }
 
         private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)

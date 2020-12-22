@@ -8,6 +8,10 @@ Was wollen wir drinne haben?
 
 	-evtl. Highscore ( AllTimeHighScore / mit eintragbaren Namen evtl.)
 
+	-Zeit/Flagge
+	-Bomben besser anzeigen
+	-Flags besser anzeigen
+	-
 
 
 
