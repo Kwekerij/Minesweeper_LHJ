@@ -66,6 +66,7 @@ namespace Minesweeper_LHJ
 				{
 					Button.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
 					Button.Font = new Font("Microsoft Sans Serif", 18);
+					Button.TextAlign = ContentAlignment.MiddleCenter;
 					Button.Text = "B"; //•
 					OnExplode();
 					Button.Enabled = false;
@@ -220,6 +221,11 @@ namespace Minesweeper_LHJ
 		public bool Opened
 		{
 			get { return (this._opened); }
+		}
+		public void RemoveEvents()
+		{
+			_button.Click -= new EventHandler(Click);
+			_button.MouseDown -= new MouseEventHandler(DismantleClick);
 		}
 	}
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Minesweeper_LHJ
 {
@@ -20,6 +21,8 @@ namespace Minesweeper_LHJ
         private int _width;
         private int _height;
         private int _mines;
+
+        Random rand = new Random();
 
         public Game(Panel panel, int difficulty)
         {
@@ -63,11 +66,13 @@ namespace Minesweeper_LHJ
                 {
                     Square s = new Square(this, x, y);
                     _squares[x, y] = s;
+
+                    s.Explode += new EventHandler(Explode);
                 }
             }
             //placing mines
             int i = 0;
-            Random rand = new Random();
+            
             while (i < Mines)
             {
                 int x = rand.Next(Width);
@@ -102,11 +107,23 @@ namespace Minesweeper_LHJ
             }
             return false;
         }
+        private void Explode(object sender, EventArgs e)
+        {
+            Panel.Enabled = false;
+            //_timer.Enabled = false;
 
-
-
-
-
+            foreach (Square s in _squares)
+            {
+                s.RemoveEvents();
+                if (s.IsMine)
+                {
+                    s.Button.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
+                    s.Button.Font = new Font("Microsoft Sans Serif", 18);
+                    s.Button.TextAlign = ContentAlignment.MiddleCenter;
+                    s.Button.Text = "B"; //•
+                }
+            }
+        }
 
 
 
