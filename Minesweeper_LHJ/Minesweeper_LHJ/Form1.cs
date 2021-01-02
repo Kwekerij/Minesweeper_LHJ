@@ -19,16 +19,22 @@ namespace Minesweeper_LHJ
             cB_Difficulty.SelectedIndex = 1;
         }
 
-        private void b_Start_Click(object sender, EventArgs e)
-        {
-            //to be deleted, when cleaning
-        }
-
         private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             _game = new Game(this.p_GameBoard, cB_Difficulty.SelectedIndex);
+            _game.Tick += new EventHandler(GameTick);
+            _game.DismantledMinesChanged += new EventHandler(GameDismantledMinesChanged);
             _game.Start();
+        }
+        private void GameTick(object sender, EventArgs e)
+        {
+            label_Timer.Text = _game.Time.ToString();
+        }
+
+        private void GameDismantledMinesChanged(object sender, EventArgs e)
+        {
+            label_Bombs.Text = (_game.Mines - _game.DismantledMines).ToString();
         }
     }
 }

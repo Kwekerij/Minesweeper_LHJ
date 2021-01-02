@@ -10,15 +10,21 @@ namespace Minesweeper_LHJ
 {
     class Game
     {
+        public event EventHandler DismantledMinesChanged;
+        public event EventHandler Tick;
+
         private Panel _panel;
         private Square[,] _squares;
 
         private int _width;
         private int _height;
         private int _mines;
-        private int _difficulty;
+        public int Time;
+        private int _dismantledMines;
+
 
         Random rand = new Random();
+        private Timer _timer;
 
         public Game(Panel panel, int difficulty)
         {
@@ -47,7 +53,6 @@ namespace Minesweeper_LHJ
                     Panel.Height = 500;
                     break;
             }
-            
         }
 
         public void Start()
@@ -81,6 +86,22 @@ namespace Minesweeper_LHJ
                     i++;
                 }
             }
+            _timer = new Timer();
+            _timer.Interval = 1000;
+            _timer.Tick += new EventHandler(TimerTick);
+            _timer.Enabled = true;
+        }
+        private void TimerTick(object sender, EventArgs e)
+        {
+            Time++;
+            OnTick();
+        }
+        protected void OnTick()
+        {
+            if (Tick != null)
+            {
+                Tick(this, new EventArgs());
+            }
         }
         public void OpenSpot(int x, int y)
         {
@@ -105,8 +126,8 @@ namespace Minesweeper_LHJ
         }
         private void Explode(object sender, EventArgs e)
         {
-            Panel.Enabled = false; //numbers get grey
-            //_timer.Enabled = false;
+            //Panel.Enabled = false; //numbers get grey
+            _timer.Enabled = false;
 
             foreach (Square s in _squares)
             {
@@ -127,10 +148,6 @@ namespace Minesweeper_LHJ
         {
             get { return (this._panel); }
         }
-        public int Difficulty
-        {
-            get { return (this._difficulty); }
-        }
         public int Width
         {
             get { return (this._width); }
@@ -142,6 +159,10 @@ namespace Minesweeper_LHJ
         public int Mines
         {
             get { return (this._mines); }
+        }
+        public int DismantledMines
+        {
+            get { return (this._dismantledMines); }
         }
     }
 }
