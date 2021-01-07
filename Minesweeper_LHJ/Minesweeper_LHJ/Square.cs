@@ -67,7 +67,7 @@ namespace Minesweeper_LHJ
 					Button.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
 					Button.Font = new Font("Microsoft Sans Serif", 18);
 					Button.TextAlign = ContentAlignment.MiddleCenter;
-					Button.Text = "B"; //•
+					Button.Text = "*"; //•
 					OnExplode();
 					Button.Enabled = false;
 				}

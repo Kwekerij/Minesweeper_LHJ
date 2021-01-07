@@ -11,8 +11,9 @@ Was wollen wir drinne haben?
 	-Zeit/Flagge
 	-Bomben besser anzeigen
 	-Flags besser anzeigen
-	-
-
+	
+	-Endscreen -> Mine Count (Time and Mines left, GO AGAINE)
+	- timer and counter ordentlich darstellen
 
 
 
