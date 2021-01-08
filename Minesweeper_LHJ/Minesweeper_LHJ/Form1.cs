@@ -37,5 +37,11 @@ namespace Minesweeper_LHJ
         {
             label_Bombs.Text = (_game.Mines - _game.DismantledMines).ToString();
         }
+
+        private void label_Help_Click(object sender, EventArgs e)
+        {
+            Hilfe MyHilfeForm = new Hilfe();
+            MyHilfeForm.Show();
+        }
     }
 }
