@@ -21,6 +21,7 @@ namespace Minesweeper_LHJ
         private int _mines;
         public int Time;
         private int _dismantledMines;
+        private int _incorrectdismantledMines;
 
 
         Random rand = new Random();
@@ -55,6 +56,53 @@ namespace Minesweeper_LHJ
             }
         }
 
+        private void Dismantle(object sender, EventArgs e)
+        {
+            Square s = (Square)sender;
+            if (s.Dismantled)
+            {
+                if (s.IsMine)
+                {
+                    _dismantledMines++;
+                }
+                else
+                {
+                    _incorrectdismantledMines++;
+                }
+            }
+            else
+            {
+                if (s.IsMine)
+                {
+                    _dismantledMines--;
+                }
+                else
+                {
+                    _incorrectdismantledMines--;
+                }
+            }
+
+            OnDismantledMinesChanged();
+
+            if (_dismantledMines == Mines)
+            {
+                _timer.Enabled = false;
+                Panel.Enabled = false;
+            }
+        }
+        protected void OnDismantledMinesChanged()
+        {
+            if (DismantledMinesChanged != null)
+            {
+                DismantledMinesChanged(this, new EventArgs());
+            }
+        }
+
+        public int DismantledMines
+        {
+            get { return _dismantledMines + _incorrectdismantledMines; }
+        }
+
         public void Start()
         {
             Panel.Enabled = true;
@@ -69,6 +117,7 @@ namespace Minesweeper_LHJ
                     _squares[x, y] = s;
 
                     s.Explode += new EventHandler(Explode);
+                    s.Dismantle += new EventHandler(Dismantle);
                 }
             }
             //placing mines
@@ -159,10 +208,6 @@ namespace Minesweeper_LHJ
         public int Mines
         {
             get { return (this._mines); }
-        }
-        public int DismantledMines
-        {
-            get { return (this._dismantledMines); }
         }
     }
 }

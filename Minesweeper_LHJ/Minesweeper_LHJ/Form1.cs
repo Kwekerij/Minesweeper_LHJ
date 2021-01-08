@@ -26,6 +26,7 @@ namespace Minesweeper_LHJ
             _game.Tick += new EventHandler(GameTick);
             _game.DismantledMinesChanged += new EventHandler(GameDismantledMinesChanged);
             _game.Start();
+            label_Bombs.Text = _game.Mines.ToString();
         }
         private void GameTick(object sender, EventArgs e)
         {
