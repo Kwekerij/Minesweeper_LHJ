@@ -27,16 +27,16 @@ namespace Minesweeper_LHJ
             _game.DismantledMinesChanged += new EventHandler(GameDismantledMinesChanged);
             _game.Start();
             label_Bombs.Text = _game.Mines.ToString();
-            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+
+            for (int index = Application.OpenForms.Count; index >= 0; index--)
             {
-                try
+                if (Application.OpenForms.Count == 2)
                 {
-                    if (Application.OpenForms[1].Name == "Winner" && Application.OpenForms[1] != null)
+                    if (Application.OpenForms[1].Name == "Winner" || Application.OpenForms[2].Name == "Winner")
                     {
                         Application.OpenForms[1].Close();
                     }
                 }
-                catch { }
             }
         }
         private void GameTick(object sender, EventArgs e)
@@ -51,8 +51,8 @@ namespace Minesweeper_LHJ
 
         private void label_Help_Click(object sender, EventArgs e)
         {
-            Hilfe MyHilfeForm = new Hilfe();
-            MyHilfeForm.Show();
+            Help _help = new Help();
+            _help.Show();
         }
     }
 }

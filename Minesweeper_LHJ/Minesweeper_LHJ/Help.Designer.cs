@@ -1,7 +1,7 @@
 ﻿
 namespace Minesweeper_LHJ
 {
-    partial class Hilfe
+    partial class Help
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Minesweeper_LHJ
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hilfe));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Help));
             this.label_HelpText = new System.Windows.Forms.Label();
             this.b_HelpOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();

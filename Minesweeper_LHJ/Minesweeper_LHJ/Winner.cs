@@ -16,8 +16,7 @@ namespace Minesweeper_LHJ
         {
             InitializeComponent();
         }
-
-        private void button_WinnerClose_Click(object sender, EventArgs e)
+        private void b_WinnerClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

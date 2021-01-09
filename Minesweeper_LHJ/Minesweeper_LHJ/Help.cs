@@ -10,13 +10,15 @@ using System.Windows.Forms;
 
 namespace Minesweeper_LHJ
 {
-    public partial class Hilfe : Form
+    public partial class Help : Form
     {
-        public Hilfe()
+        public Help()
         {
             InitializeComponent();
+            {
+                this.Close();
+            }
         }
-
         private void b_HelpOK_Click(object sender, EventArgs e)
         {
             this.Close();

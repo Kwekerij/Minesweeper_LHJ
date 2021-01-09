@@ -88,8 +88,8 @@ namespace Minesweeper_LHJ
             {
                 _timer.Enabled = false;
                 Panel.Enabled = false;
-                Winner MyWinner = new Winner();
-                MyWinner.Show();
+                Winner winner = new Winner();
+                winner.Show();
             }
         }
         protected void OnDismantledMinesChanged()
