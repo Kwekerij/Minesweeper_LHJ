@@ -122,8 +122,11 @@
 Ziel des Spiels ist es, alle Felder aufzudecken, hinter denen sich keine Mine verbirgt.  
 Mit der linken Maustaste legt der Spieler ein Feld frei; wenn unter diesem Feld eine Mine liegt, ist das Spiel verloren. 
 Mit der rechten Maustaste markiert er ein Feld als Mine. 
-Um diese Markierung rückgängig zu machen, genügen (je nach ausgewählter Einstellung) ein oder zwei weitere rechte Mausklicks auf dasselbe Feld. 
+Um diese Markierung rückgängig zu machen, genügt ein weiterer rechte Mausklick auf dasselbe Feld. 
 Mit der linken Maustaste freigelegte Felder, die keine Mine enthalten, enthüllen die Anzahl der Minen, die sich in den benachbarten acht Feldern befinden. 
 </value>
   </data>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

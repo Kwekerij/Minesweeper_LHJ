@@ -16,7 +16,7 @@ namespace Minesweeper_LHJ
         public Form1()
         {
             InitializeComponent();
-            cB_Difficulty.SelectedIndex = 1;
+            //cB_Difficulty.SelectedIndex = 1;
         }
 
         private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)
@@ -27,6 +27,17 @@ namespace Minesweeper_LHJ
             _game.DismantledMinesChanged += new EventHandler(GameDismantledMinesChanged);
             _game.Start();
             label_Bombs.Text = _game.Mines.ToString();
+            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            {
+                try
+                {
+                    if (Application.OpenForms[1].Name == "Winner" && Application.OpenForms[1] != null)
+                    {
+                        Application.OpenForms[1].Close();
+                    }
+                }
+                catch { }
+            }
         }
         private void GameTick(object sender, EventArgs e)
         {

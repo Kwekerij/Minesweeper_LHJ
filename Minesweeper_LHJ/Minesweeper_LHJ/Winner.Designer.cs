@@ -63,6 +63,7 @@ namespace Minesweeper_LHJ
             this.ClientSize = new System.Drawing.Size(405, 171);
             this.Controls.Add(this.button_WinnerClose);
             this.Controls.Add(this.label_Winner);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Winner";
             this.ResumeLayout(false);
             this.PerformLayout();

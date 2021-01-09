@@ -92,6 +92,7 @@ namespace Minesweeper_LHJ
             this.Controls.Add(this.b_HelpOK);
             this.Controls.Add(this.label_HelpText);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Hilfe";
             this.Text = "Form2";
             this.ResumeLayout(false);
