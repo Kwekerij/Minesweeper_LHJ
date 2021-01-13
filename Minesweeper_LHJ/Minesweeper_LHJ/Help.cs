@@ -16,7 +16,7 @@ namespace Minesweeper_LHJ
         {
             InitializeComponent();
             {
-                this.Close();
+
             }
         }
         private void b_HelpOK_Click(object sender, EventArgs e)
