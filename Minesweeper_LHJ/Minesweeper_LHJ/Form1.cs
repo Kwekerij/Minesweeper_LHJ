@@ -30,7 +30,7 @@ namespace Minesweeper_LHJ
 
             for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
             {
-                    if (Application.OpenForms[index].Name == "Winner" /*|| Application.OpenForms[2].Name == "Winner"*/)
+                    if (Application.OpenForms[index].Name == "Winner")
                     {
                         Application.OpenForms[index].Close();
                     }
