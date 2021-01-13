@@ -43,19 +43,21 @@ namespace Minesweeper_LHJ
             this.label_HelpText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_HelpText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label_HelpText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_HelpText.Location = new System.Drawing.Point(10, 49);
+            this.label_HelpText.Location = new System.Drawing.Point(13, 60);
+            this.label_HelpText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_HelpText.Name = "label_HelpText";
             this.label_HelpText.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label_HelpText.Size = new System.Drawing.Size(1092, 120);
+            this.label_HelpText.Size = new System.Drawing.Size(1339, 150);
             this.label_HelpText.TabIndex = 0;
             this.label_HelpText.Text = resources.GetString("label_HelpText.Text");
             this.label_HelpText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // b_HelpOK
             // 
-            this.b_HelpOK.Location = new System.Drawing.Point(477, 200);
+            this.b_HelpOK.Location = new System.Drawing.Point(636, 246);
+            this.b_HelpOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.b_HelpOK.Name = "b_HelpOK";
-            this.b_HelpOK.Size = new System.Drawing.Size(100, 30);
+            this.b_HelpOK.Size = new System.Drawing.Size(133, 37);
             this.b_HelpOK.TabIndex = 1;
             this.b_HelpOK.Text = "Verstanden!";
             this.b_HelpOK.UseVisualStyleBackColor = true;
@@ -64,9 +66,10 @@ namespace Minesweeper_LHJ
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(215)))), ((int)(((byte)(81)))));
-            this.label1.Location = new System.Drawing.Point(-37, 189);
+            this.label1.Location = new System.Drawing.Point(-49, 233);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1600, 126);
+            this.label1.Size = new System.Drawing.Size(2133, 155);
             this.label1.TabIndex = 2;
             // 
             // label2
@@ -75,24 +78,27 @@ namespace Minesweeper_LHJ
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(449, 9);
+            this.label2.Location = new System.Drawing.Point(599, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 29);
+            this.label2.Size = new System.Drawing.Size(235, 36);
             this.label2.TabIndex = 3;
             this.label2.Text = "So wird gespielt:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Help
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(117)))), ((int)(((byte)(44)))));
-            this.ClientSize = new System.Drawing.Size(1106, 242);
+            this.ClientSize = new System.Drawing.Size(1475, 298);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.b_HelpOK);
             this.Controls.Add(this.label_HelpText);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Help";
             this.Text = "Help";
             this.ResumeLayout(false);
