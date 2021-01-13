@@ -16,8 +16,6 @@ Was wollen wir drinne haben?
 	- timer and counter ordentlich darstellen
 
 
-	- release
-	- archivieren mit passwort 1234
 
 
 
