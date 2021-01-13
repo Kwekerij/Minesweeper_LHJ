@@ -20,3 +20,5 @@ C:\Users\lugau\OneDrive\Dokumente\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Mineswe
 C:\Users\lugau\OneDrive\Dokumente\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.pdb
 C:\Users\lugau\OneDrive\Dokumente\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.Winner.resources
 C:\Users\lugau\OneDrive\Dokumente\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.Help.resources
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.Help.resources
+C:\Users\Lukas.ul\Documents\GitHub\Minesweeper_LHJ\Minesweeper_LHJ\Minesweeper_LHJ\obj\Debug\Minesweeper_LHJ.Winner.resources

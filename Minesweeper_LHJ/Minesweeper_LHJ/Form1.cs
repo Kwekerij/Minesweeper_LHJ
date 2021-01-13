@@ -16,7 +16,7 @@ namespace Minesweeper_LHJ
         public Form1()
         {
             InitializeComponent();
-            //cB_Difficulty.SelectedIndex = 1;
+            cB_Difficulty.SelectedIndex = 1;
         }
 
         private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)
