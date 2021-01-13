@@ -17,6 +17,7 @@ namespace Minesweeper_LHJ
         {
             InitializeComponent();
             //cB_Difficulty.SelectedIndex = 1;
+            cB_Difficulty.Text = "Hallo";
         }
 
         private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)
