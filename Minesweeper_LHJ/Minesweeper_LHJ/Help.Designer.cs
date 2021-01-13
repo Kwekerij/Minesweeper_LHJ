@@ -82,7 +82,7 @@ namespace Minesweeper_LHJ
             this.label2.Text = "So wird gespielt:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Hilfe
+            // Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,8 +93,8 @@ namespace Minesweeper_LHJ
             this.Controls.Add(this.label_HelpText);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "Hilfe";
-            this.Text = "Form2";
+            this.Name = "Help";
+            this.Text = "Help";
             this.ResumeLayout(false);
             this.PerformLayout();
 

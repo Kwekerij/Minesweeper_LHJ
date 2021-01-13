@@ -28,15 +28,12 @@ namespace Minesweeper_LHJ
             _game.Start();
             label_Bombs.Text = _game.Mines.ToString();
 
-            for (int index = Application.OpenForms.Count; index >= 0; index--)
+            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
             {
-                if (Application.OpenForms.Count == 2)
-                {
-                    if (Application.OpenForms[1].Name == "Winner" || Application.OpenForms[2].Name == "Winner")
+                    if (Application.OpenForms[index].Name == "Winner" /*|| Application.OpenForms[2].Name == "Winner"*/)
                     {
-                        Application.OpenForms[1].Close();
+                        Application.OpenForms[index].Close();
                     }
-                }
             }
         }
         private void GameTick(object sender, EventArgs e)
