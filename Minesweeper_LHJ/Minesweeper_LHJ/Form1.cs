@@ -16,11 +16,23 @@ namespace Minesweeper_LHJ
         public Form1()
         {
             InitializeComponent();
-            //cB_Difficulty.SelectedIndex = 1;
+            cB_Difficulty.SelectedIndex = 1;
         }
 
         private void cB_Difficulty_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch(cB_Difficulty.SelectedIndex)
+            {
+                case 0:
+                    label_Help.Location = new Point(405, 21);
+                    break;
+                case 1:
+                    label_Help.Location = new Point(505, 21);
+                    break;
+                case 2:
+                    label_Help.Location = new Point(555, 21);
+                    break;
+            }
             Cursor.Current = Cursors.WaitCursor;
             _game = new Game(this.p_GameBoard, cB_Difficulty.SelectedIndex);
             _game.Tick += new EventHandler(GameTick);
@@ -30,10 +42,10 @@ namespace Minesweeper_LHJ
 
             for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
             {
-                    if (Application.OpenForms[index].Name == "Winner")
-                    {
-                        Application.OpenForms[index].Close();
-                    }
+                if (Application.OpenForms[index].Name == "Winner")
+                {
+                    Application.OpenForms[index].Close();
+                }
             }
         }
         private void GameTick(object sender, EventArgs e)

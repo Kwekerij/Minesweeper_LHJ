@@ -1,19 +1,26 @@
 ﻿
 Was wollen wir drinne haben?
-	-Timer
-	-Anzahl Minen (fehlende Minen); einstellbar
-	X-Spielfeldgröße/Schwierigkeit 3oder5; anpassen; kleines Fenster; eigenes Feld
-	-Funktion; Minen erst nach erstem Klick verteilen (wenn möglich Feld öffnet sich)
-	-Hilfe Button zur Spielanleitung
 
-	-evtl. Highscore ( AllTimeHighScore / mit eintragbaren Namen evtl.)
+	-Highscore in Endscreen anzeigen
+	-Neustart in Endscreen
+	-XML Dokumentation
+	-Zeit/Flagge --- Visualisierung (Zeichen siehe Google) ; Uhr neben Timer
+	-Bomben besser anzeigen?
+	-Flags besser anzeigen?
 
-	-Zeit/Flagge
-	-Bomben besser anzeigen
-	-Flags besser anzeigen
+
+
+	-evtl alle Felder aufdecken bei Beendigung?!?!?
+
+
+
+
 	
-	-Endscreen -> Mine Count (Time and Mines left, GO AGAINE)
-	- timer and counter ordentlich darstellen
+	
+	
+	
+
+
 
 
 

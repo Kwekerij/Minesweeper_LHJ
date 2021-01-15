@@ -91,7 +91,7 @@ namespace Minesweeper_LHJ
             this.label_Help.AutoSize = true;
             this.label_Help.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_Help.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_Help.Location = new System.Drawing.Point(368, 23);
+            this.label_Help.Location = new System.Drawing.Point(464, 21);
             this.label_Help.Name = "label_Help";
             this.label_Help.Size = new System.Drawing.Size(25, 29);
             this.label_Help.TabIndex = 5;

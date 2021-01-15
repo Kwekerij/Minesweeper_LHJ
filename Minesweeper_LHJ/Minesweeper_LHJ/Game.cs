@@ -140,7 +140,7 @@ namespace Minesweeper_LHJ
             _timer = new Timer();
             _timer.Interval = 1000;
             _timer.Tick += new EventHandler(TimerTick);
-            _timer.Enabled = true;
+            //_timer.Enabled = true;
         }
         private void TimerTick(object sender, EventArgs e)
         {
@@ -194,7 +194,10 @@ namespace Minesweeper_LHJ
         }
 
 
-
+        public Timer Timer
+        {
+            get { return (this._timer); }
+        }
         public Panel Panel
         {
             get { return (this._panel); }

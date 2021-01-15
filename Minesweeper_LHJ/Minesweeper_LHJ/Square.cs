@@ -60,6 +60,7 @@ namespace Minesweeper_LHJ
 
 		private void Click(object sender, System.EventArgs e)
 		{
+			_game.Timer.Enabled = true;
 			if (!Dismantled)
 			{
 				if (IsMine)
