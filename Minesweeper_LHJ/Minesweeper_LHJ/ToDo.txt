@@ -4,9 +4,7 @@ Was wollen wir drinne haben?
 	-Highscore in Endscreen anzeigen
 	-Neustart in Endscreen
 	-XML Dokumentation
-	-Zeit/Flagge --- Visualisierung (Zeichen siehe Google) ; Uhr neben Timer
 	-Bomben besser anzeigen?
-	-Flags besser anzeigen?
 
 
 

@@ -89,19 +89,32 @@ namespace Minesweeper_LHJ
 					if ((X + Y) % 2 == 0)
 					{
 						Button.BackColor = Color.FromArgb(170, 215, 81);
+						Button.Image = null;
 					}
 					else
 					{
 						Button.BackColor = Color.FromArgb(162, 209, 73);
+						Button.Image = null;
+
 					}
 					Button.ForeColor = Color.FromArgb(242, 54, 7);
-					Button.Text = "?";
+					Button.Text = " ";
 				}
 				else
 				{
 					_dismantled = true;
-					Button.BackColor = Color.Green;
-					Button.Text = "";
+					//Button.BackColor = Color.Green;
+					if ((X + Y) % 2 == 0)
+					{
+						Button.BackColor = Color.FromArgb(170, 215, 81);
+						Button.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + @"\Bilder\Flagge_hell.png");
+					}
+					else
+					{
+						Button.BackColor = Color.FromArgb(162, 209, 73);
+						Button.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + @"\Bilder\Flagge_dunkel.png");
+					}					
+					Button.Text = " ";
 				}
 				OnDismantle();
 			}

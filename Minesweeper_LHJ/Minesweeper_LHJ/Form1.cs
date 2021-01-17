@@ -63,5 +63,11 @@ namespace Minesweeper_LHJ
             Help _help = new Help();
             _help.Show();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + @"\Bilder\Flagge.png");
+            pictureBox2.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + @"\Bilder\Uhr.png");
+        }
     }
 }
