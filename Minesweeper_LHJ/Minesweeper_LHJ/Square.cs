@@ -40,12 +40,12 @@ namespace Minesweeper_LHJ
 			Button.Text = ""; //setzt den Text auf null
 
 			int w = _game.Panel.Width / _game.Width; //wird für die verschiedene Skalierung der Größen der squares benötigt
-			int h = _game.Panel.Height / _game.Height; //
+			int h = _game.Panel.Height / _game.Height; //gleiche nur für die Höhe
 
 			_button.Width = w + 1; //Breite des Buttons gesetzt
 			_button.Height = h + 1; //Höhe des Buttons gesetzt
-			_button.Left = w * X; // Position vom Button
-			_button.Top = h * Y;
+			_button.Left = w * X; // Position vom Button, links
+			_button.Top = h * Y; // Position vom Button, oben
 			_button.FlatStyle = FlatStyle.Flat; //nimmt 3D-Effekt raus, optische Verbesserung
 			_button.FlatAppearance.BorderSize = 0; //der Rand wird eleminiert, optische Verbesserung
 			_button.TabStop = false;

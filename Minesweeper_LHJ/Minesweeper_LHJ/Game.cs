@@ -97,8 +97,8 @@ namespace Minesweeper_LHJ
 
             if (_dismantledMines == Mines) //Wenn alle Minen richtig markierten wurden, wird das Spiel direkt beendet
             {
-                _timer.Enabled = false;
-                Panel.Enabled = false;
+                _timer.Enabled = false; //Timer wird gestoppt
+                Panel.Enabled = false; 
                 Winner winner = new Winner();
                 winner.Show();
             }
