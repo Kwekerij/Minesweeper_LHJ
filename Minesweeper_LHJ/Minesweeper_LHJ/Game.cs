@@ -10,33 +10,39 @@ namespace Minesweeper_LHJ
 {
     class Game
     {
-        public event EventHandler DismantledMinesChanged;
-        public event EventHandler Tick;
+        public event EventHandler DismantledMinesChanged; //Event um die Anzeige in Form1 zu aktualisieren
+        public event EventHandler Tick; //Event um den Timer in Form1 zu aktualisieren
 
-        private Panel _panel;
-        private Square[,] _squares;
+        private Panel _panel; //erstellt eigenes Panel um Panel aus Form1 übernehmen zu können
+        private Square[,] _squares; //erstellt objektvariable _square
 
-        private int _width;
-        private int _height;
-        private int _mines;
-        public int Time;
-        private int _dismantledMines;
-        private int _incorrectdismantledMines;
+        private int _width; //Breite des Spielfeldes
+        private int _height; //Höhe des Spielfeldes
+        private int _mines; //Minen
+        public int Time; //Zeit für den Counter
+        private int _dismantledMines; //Anzahl korrekt markierte Minen
+        private int _incorrectdismantledMines; //Anzahl inkorrekte markierte Minen
 
 
-        Random rand = new Random();
-        private Timer _timer;
+        Random rand = new Random(); //random Funktion für die Platzierung der Minen und random Farben
+        private Timer _timer; //objektvariable _timer wird erstellt
 
+        /// <summary>
+        /// constructor of GameClass
+        /// </summary>
+        /// <param name="panel">Gameboard from Form1</param>
+        /// <param name="difficulty">Selected difficulty from ComboBox</param>
         public Game(Panel panel, int difficulty)
         {
-            _panel = panel;
-            switch(difficulty)
+            _panel = panel; //speichert panel in eigene Variable
+
+            switch(difficulty) //Hier werden mit den jeweilgen Schwierigkeitsgraden die festgelegten Werte gesetzt
             {
                 case 0:
                     _width = 10;
                     _height = 8;
                     _mines = 10;
-                    Panel.Width = 450; //45
+                    Panel.Width = 450; //45 Pixel Breite pro square
                     Panel.Height = 360;
                     break;
                 case 1:
@@ -56,6 +62,11 @@ namespace Minesweeper_LHJ
             }
         }
 
+        /// <summary>
+        /// Method for the Dismantle click
+        /// </summary>
+        /// <param name="sender">reference to the control that raised the event</param>
+        /// <param name="e">contains event data</param>
         private void Dismantle(object sender, EventArgs e)
         {
             Square s = (Square)sender;
@@ -84,7 +95,7 @@ namespace Minesweeper_LHJ
 
             OnDismantledMinesChanged();
 
-            if (_dismantledMines == Mines)
+            if (_dismantledMines == Mines) //Wenn alle Minen richtig markierten wurden, wird das Spiel direkt beendet
             {
                 _timer.Enabled = false;
                 Panel.Enabled = false;
@@ -92,103 +103,136 @@ namespace Minesweeper_LHJ
                 winner.Show();
             }
         }
+        /// <summary>
+        /// method for event DismantledMinesChanged
+        /// </summary>
         protected void OnDismantledMinesChanged()
         {
-            if (DismantledMinesChanged != null)
+            if (DismantledMinesChanged != null) //um Fehler vorzubeugen
             {
                 DismantledMinesChanged(this, new EventArgs());
             }
         }
-
+        /// <summary>
+        /// get-method for DismantledMines
+        /// </summary>
         public int DismantledMines
         {
             get { return _dismantledMines + _incorrectdismantledMines; }
         }
-
+        /// <summary>
+        /// executed at start and restart of the game
+        /// creates Squares, places Mines, creates Timer
+        /// </summary>
         public void Start()
         {
             Panel.Enabled = true;
-            Panel.Controls.Clear();
+            Panel.Controls.Clear(); //für den Neustart wird das Panel bereinigt
 
-            _squares = new Square[Width, Height];
-            for (int x = 0; x < Width; x++)
+            _squares = new Square[Width, Height]; //Instanziierung für neues Square
+            for (int x = 0; x < Width; x++) //geht Höhe durch
             {
-                for (int y = 0; y < Height; y++)
+                for (int y = 0; y < Height; y++) //geht Breite durch
                 {
-                    Square s = new Square(this, x, y);
-                    _squares[x, y] = s;
+                    Square s = new Square(this, x, y); //erstellt für jede Koordinate ein neues Square
+                    _squares[x, y] = s; //erstelltes Square wird mit passendem x und y ordentlich abgespeichert
 
-                    s.Explode += new EventHandler(Explode);
-                    s.Dismantle += new EventHandler(Dismantle);
+                    s.Explode += new EventHandler(Explode); //ermöglicht einfachen Übergang zwischen Klassen; Explode wird bei s.Explode ausgeführt (abboniert)
+                    s.Dismantle += new EventHandler(Dismantle); //Dismantle wird bei s.Dismantle ausgeführt
                 }
             }
-            //placing mines
-            int i = 0;
             
-            while (i < Mines)
+            int i = 0;
+            while (i < Mines) //alle Minen werden platziert
             {
-                int x = rand.Next(Width);
-                int y = rand.Next(Height);
+                int x = rand.Next(Width); //random x wird gesetzt
+                int y = rand.Next(Height); //random y wird gesetzt
 
-                Square s = _squares[x, y];
-                if (!s.IsMine)
+                Square s = _squares[x, y]; //das random gefundene Square wird der einfach in s gespeichert (einfacher)
+                if (!s.IsMine) //wird noch gecheckt ob das Square bereits eine Mine beinhaltet
                 {
-                    s.IsMine = true;
-                    i++;
+                    s.IsMine = true; //die bool Eigenschaft, dass sich da eine Mine befindet wird auf true gesetzt
+                    i++; //Minencounter wird um 1 erhöht
                 }
             }
-            _timer = new Timer();
-            _timer.Interval = 1000;
-            _timer.Tick += new EventHandler(TimerTick);
+            _timer = new Timer(); //Instanziierung vom Timer
+            _timer.Interval = 1000; //Timerschritte von 1s
+            _timer.Tick += new EventHandler(TimerTick); //bei jedem event Tick(1s) wird die method TimerTick ausgeführt
             //_timer.Enabled = true;
         }
+        /// <summary>
+        /// Counter for Timer
+        /// </summary>
+        /// <param name="sender">reference to the control that raised the event</param>
+        /// <param name="e">contains event data</param>
         private void TimerTick(object sender, EventArgs e)
         {
-            Time++;
-            OnTick();
+            Time++; //zählt um eins hoch um die Zeit ordentlich speichern zu können
+            OnTick(); //ruft method OnTick auf
         }
+        /// <summary>
+        /// method to set Event Tick
+        /// </summary>
         protected void OnTick()
         {
-            if (Tick != null)
+            if (Tick != null) //vorbeugung von NullReference
             {
-                Tick(this, new EventArgs());
+                Tick(this, new EventArgs()); //fürht tick event aus
             }
         }
+        /// <summary>
+        /// Checks for square class, if square is in limits;
+        /// executes _squares.Open
+        /// </summary>
+        /// <param name="x">x-coordinate of square</param>
+        /// <param name="y">y-coordinate of square</param>
         public void OpenSpot(int x, int y)
         {
-            if (x >= 0 && x < Width)
+            if (x >= 0 && x < Width) //checkt ob x innerhalt der Breite ist
             {
-                if (y >= 0 && y < Height)
+                if (y >= 0 && y < Height) //checkt ob y innerhalb der Höhe ist
                 {
-                    _squares[x, y].Open();
+                    _squares[x, y].Open(); //führt Open method für das bestimmte square aus
                 }
             }
         }
+
+        /// <summary>
+        /// checks for square class, if square is in limtis; IsMine
+        /// </summary>
+        /// <param name="x">x-coordinate of square</param>
+        /// <param name="y">y-coordinate of square</param>
+        /// <returns>Bool for square has mine</returns>
         public bool IsBomb(int x, int y)
         {
-            if (x >= 0 && x < Width)
+            if (x >= 0 && x < Width) //checkt ob x innerhalt der Breite ist
             {
-                if (y >= 0 && y < Height)
+                if (y >= 0 && y < Height) //checkt ob y innerhalb der Höhe ist
                 {
-                    return _squares[x, y].IsMine;
+                    return _squares[x, y].IsMine; //gibt bool zurück, ob sich eine Mine in dem square befindet
                 }
             }
-            return false;
+            return false; //falls außerhalb der Limits gibt es false zurück
         }
+        /// <summary>
+        /// end of the game
+        /// </summary>
+        /// <param name="sender">reference to the control that raised the event</param>
+        /// <param name="e">contains event data</param>
         private void Explode(object sender, EventArgs e)
         {
-            //Panel.Enabled = false; //numbers get grey
-            _timer.Enabled = false;
+            //Panel.Enabled = false; //Nummern würden grau werden
+            _timer.Enabled = false; //timer wird gestoppt
 
-            foreach (Square s in _squares)
+            foreach (Square s in _squares) //jedes square wird durchgegangen
             {
-                s.RemoveEvents();
-                if (s.IsMine)
+                s.RemoveEvents(); //deabboniert alle events
+                if (s.IsMine) //checkt ob square Mine beinhaltet
                 {
-                    s.Button.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256));
-                    s.Button.Font = new Font("Microsoft Sans Serif", 18);
-                    s.Button.TextAlign = ContentAlignment.MiddleCenter;
-                    s.Button.Text = "*"; //• 
+                    s.Button.BackColor = Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256)); //gibt jedem Bombensquare eine random colour
+                    s.Button.Font = new Font("Microsoft Sans Serif", 18); //Button wird Font gegeben um Text später wiederzugeben
+                    s.Button.TextAlign = ContentAlignment.MiddleCenter; //um das * mehr mittig anzuzeigen
+                    s.Button.Text = "*"; //• hier wird das alte * Symbol verwendet, wie bei dem Ur-Minesweeper game
                 }
             }
         }
