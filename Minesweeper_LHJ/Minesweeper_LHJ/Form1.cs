@@ -44,7 +44,7 @@ namespace Minesweeper_LHJ
             _game.Start(); //das game wird gestartet mit der _game.Start method
             label_Bombs.Text = _game.Mines.ToString(); //Die Anzahl der Minen wird angezeigt, damit das vor dem ersten Klick auch schon ordentlich da steht
 
-            for (int index = Application.OpenForms.Count - 1; index >= 0; index--)
+            for (int index = Application.OpenForms.Count - 1; index >= 0; index--) //geht alle aktuell geöffneten Forms durch und schließt, falls vorhanden, das WinnerForms
             {
                 if (Application.OpenForms[index].Name == "Winner")
                 {
