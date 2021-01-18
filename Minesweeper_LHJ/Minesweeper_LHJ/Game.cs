@@ -10,6 +10,7 @@ namespace Minesweeper_LHJ
 {
     class Game
     {
+        #region Init
         public event EventHandler DismantledMinesChanged; //Event um die Anzeige in Form1 zu aktualisieren
         public event EventHandler Tick; //Event um den Timer in Form1 zu aktualisieren
 
@@ -26,6 +27,7 @@ namespace Minesweeper_LHJ
 
         Random rand = new Random(); //random Funktion für die Platzierung der Minen und random Farben
         private Timer _timer; //objektvariable _timer wird erstellt
+        #endregion
 
         /// <summary>
         /// constructor of GameClass
@@ -61,7 +63,7 @@ namespace Minesweeper_LHJ
                     break;
             }
         }
-
+        #region Dismantle
         /// <summary>
         /// Method for the Dismantle click
         /// </summary>
@@ -113,13 +115,7 @@ namespace Minesweeper_LHJ
                 DismantledMinesChanged(this, new EventArgs());
             }
         }
-        /// <summary>
-        /// get-method for DismantledMines
-        /// </summary>
-        public int DismantledMines
-        {
-            get { return _dismantledMines + _incorrectdismantledMines; }
-        }
+        #endregion
         /// <summary>
         /// executed at start and restart of the game
         /// creates Squares, places Mines, creates Timer
@@ -160,6 +156,8 @@ namespace Minesweeper_LHJ
             _timer.Tick += new EventHandler(TimerTick); //bei jedem event Tick(1s) wird die method TimerTick ausgeführt
             //_timer.Enabled = true;
         }
+
+        #region Timer
         /// <summary>
         /// Counter for Timer
         /// </summary>
@@ -180,6 +178,8 @@ namespace Minesweeper_LHJ
                 Tick(this, new EventArgs()); //fürht tick event aus
             }
         }
+        #endregion
+
         /// <summary>
         /// Checks for square class, if square is in limits;
         /// executes _squares.Open
@@ -198,7 +198,7 @@ namespace Minesweeper_LHJ
         }
 
         /// <summary>
-        /// checks for square class, if square is in limtis; IsMine
+        /// checks for square class, if square is in limtis and has Mine
         /// </summary>
         /// <param name="x">x-coordinate of square</param>
         /// <param name="y">y-coordinate of square</param>
@@ -214,6 +214,7 @@ namespace Minesweeper_LHJ
             }
             return false; //falls außerhalb der Limits gibt es false zurück
         }
+
         /// <summary>
         /// end of the game
         /// </summary>
@@ -236,27 +237,49 @@ namespace Minesweeper_LHJ
                 }
             }
         }
-
-
+        #region get methods
+        /// <summary>
+        /// get method for Timer
+        /// </summary>
         public Timer Timer
         {
             get { return (this._timer); }
         }
+        /// <summary>
+        /// get method for Panel
+        /// </summary>
         public Panel Panel
         {
             get { return (this._panel); }
         }
+        /// <summary>
+        /// get method for Width
+        /// </summary>
         public int Width
         {
             get { return (this._width); }
         }
+        /// <summary>
+        /// get method for Height
+        /// </summary>
         public int Height
         {
             get { return (this._height); }
         }
+        /// <summary>
+        /// get method for Mines
+        /// </summary>
         public int Mines
         {
             get { return (this._mines); }
         }
+        /// <summary>
+        /// get method for DismantledMines
+        /// </summary>
+        public int DismantledMines
+        {
+            get { return _dismantledMines + _incorrectdismantledMines; }
+        }
+        #endregion
     }
 }

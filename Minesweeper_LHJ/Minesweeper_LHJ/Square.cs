@@ -10,7 +10,8 @@ namespace Minesweeper_LHJ
 {
     class Square
     {
-		public event EventHandler Dismantle; //Dismantle Event für Kommunikation mit game class
+        #region Init
+        public event EventHandler Dismantle; //Dismantle Event für Kommunikation mit game class
 		public event EventHandler Explode; //Explode Event für Kommunikation mit game class
 
 		private bool _dismantled = false; //Initialisierung für "rechtsgeklickt" gleich false
@@ -24,14 +25,15 @@ namespace Minesweeper_LHJ
 		Random rand = new Random(); //random Funktion für Farbauswahl
 
 		public bool IsMine { get; set; } //get set Method für IsMine Eigenschaft
+        #endregion
 
-		/// <summary>
-		/// constructor for the Square class, creates Square
-		/// </summary>
-		/// <param name="game">game object from game class</param>
-		/// <param name="x">x-coordinate of square</param>
-		/// <param name="y">y-coordinate of square</param>
-		public Square(Game game, int x, int y) 
+        /// <summary>
+        /// constructor for the Square class, creates Square
+        /// </summary>
+        /// <param name="game">game object from game class</param>
+        /// <param name="x">x-coordinate of square</param>
+        /// <param name="y">y-coordinate of square</param>
+        public Square(Game game, int x, int y) 
 		{
 			_game = game; //speichert das game in eigene Variable ab
 			_x = x; //speichert x in eigene Variable ab
@@ -63,13 +65,13 @@ namespace Minesweeper_LHJ
 
 			_game.Panel.Controls.Add(Button); //der nun definierte Button wird dem Panel hinzugefügt
 		}
-
-		/// <summary>
-		/// method when square is clicked one
-		/// </summary>
-		/// <param name="sender">reference to the control that raised the event</param>
-		/// <param name="e">contains event data</param>
-		private void Click(object sender, System.EventArgs e)
+        #region Clicks
+        /// <summary>
+        /// method when square is clicked one
+        /// </summary>
+        /// <param name="sender">reference to the control that raised the event</param>
+        /// <param name="e">contains event data</param>
+        private void Click(object sender, System.EventArgs e)
 		{
 			_game.Timer.Enabled = true; //startet erst den Timer wenn man auf ein Square geklickt hat
 			if (!Dismantled) //wenn nicht dismantled/markiert
@@ -129,11 +131,12 @@ namespace Minesweeper_LHJ
 				OnDismantle(); //method für dismantle Event aufgerufen
 			}
 		}
+        #endregion
 
-		/// <summary>
-		/// method to open the square
-		/// </summary>
-		public void Open()
+        /// <summary>
+        /// method to open the square
+        /// </summary>
+        public void Open()
 		{
 			if (!Opened && !Dismantled)
 			{
@@ -214,11 +217,11 @@ namespace Minesweeper_LHJ
 				}
 			}
 		}
-
-		/// <summary>
-		/// method to set Dismantle event
-		/// </summary>
-		protected void OnDismantle()
+        #region Events
+        /// <summary>
+        /// method to set Dismantle event
+        /// </summary>
+        protected void OnDismantle()
 		{
 			if (Dismantle != null)
 			{
@@ -236,14 +239,18 @@ namespace Minesweeper_LHJ
 				Explode(this, new EventArgs());
 			}
 		}
+        #endregion
 
-		/// <summary>
-		/// get method for Button
-		/// </summary>
-		public Button Button
+        #region get methods
+
+        /// <summary>
+        /// get method for Button
+        /// </summary>
+        public Button Button
 		{
 			get { return (this._button); }
 		}
+
 		/// <summary>
 		/// get method for X
 		/// </summary>
@@ -259,6 +266,7 @@ namespace Minesweeper_LHJ
 		{
 			get { return (this._y); }
 		}
+
 		/// <summary>
 		/// get method for Dismantled
 		/// </summary>
@@ -266,6 +274,7 @@ namespace Minesweeper_LHJ
 		{
 			get { return (this._dismantled); }
 		}
+
 		/// <summary>
 		/// get method for Opened
 		/// </summary>
@@ -273,11 +282,12 @@ namespace Minesweeper_LHJ
 		{
 			get { return (this._opened); }
 		}
+        #endregion
 
-		/// <summary>
-		/// method to unsubrscribe events
-		/// </summary>
-		public void RemoveEvents()
+        /// <summary>
+        /// method to unsubrscribe events
+        /// </summary>
+        public void RemoveEvents()
 		{
 			_button.Click -= new EventHandler(Click);
 			_button.MouseDown -= new MouseEventHandler(DismantleClick);

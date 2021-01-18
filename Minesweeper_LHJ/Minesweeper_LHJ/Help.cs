@@ -12,16 +12,21 @@ namespace Minesweeper_LHJ
 {
     public partial class Help : Form
     {
+        /// <summary>
+        /// constructor, just InitializeComponent
+        /// </summary>
         public Help()
         {
             InitializeComponent();
-            {
-
-            }
         }
+        /// <summary>
+        /// method to close the help window
+        /// </summary>
+        /// <param name="sender">reference to the control that raised the event</param>
+        /// <param name="e">contains event data</param>
         private void b_HelpOK_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); //schließt das Fenster
         }
     }
 }
